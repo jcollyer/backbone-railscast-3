@@ -1,0 +1,333 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 18:37:33 -0800
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+Compiled entries.css  (190ms)  (pid 52414)
+Compiled main.css  (15ms)  (pid 52414)
+Compiled application.css  (220ms)  (pid 52414)
+Compiled jquery.js  (2ms)  (pid 52414)
+Compiled jquery_ujs.js  (0ms)  (pid 52414)
+Compiled underscore.js  (0ms)  (pid 52414)
+Compiled backbone.js  (0ms)  (pid 52414)
+Compiled raffler.js  (134ms)  (pid 52414)
+Compiled entries/index.js  (150ms)  (pid 52414)
+Compiled models/entry.js  (130ms)  (pid 52414)
+Compiled collections/entries.js  (152ms)  (pid 52414)
+Compiled views/entries/entries_index.js  (136ms)  (pid 52414)
+Compiled routers/entries_router.js  (132ms)  (pid 52414)
+Compiled application.js  (971ms)  (pid 52414)
+Completed 200 OK in 1269ms (Views: 1268.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /application.css - 200 OK (14ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /entries.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /underscore.js - 200 OK (7ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /backbone.js - 200 OK (2ms)
+
+
+Started GET "/assets/raffler.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /raffler.js - 200 OK (1ms)
+
+
+Started GET "/assets/entries/index.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /entries/index.js - 200 OK (4ms)
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /models/entry.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /collections/entries.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/entries/entries_index.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /views/entries/entries_index.js - 200 OK (1ms)
+
+
+Started GET "/assets/routers/entries_router.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /routers/entries_router.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Served asset /application.js - 200 OK (35ms)
+
+
+Started GET "/api/entries" for 127.0.0.1 at 2014-01-20 18:37:35 -0800
+Processing by EntriesController#index as JSON
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'entries'):
+  app/controllers/entries_controller.rb:5:in `index'
+
+
+  Rendered /Users/jcollyer/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/jcollyer/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/jcollyer/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (93.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (3.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20120207184723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "winner" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120207184723')
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("entries")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20120207184723)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("entries")
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /application.css - 200 OK (10ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /entries.css - 200 OK (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /underscore.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:03 -0800
+Served asset /jquery.js - 200 OK (22ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /backbone.js - 200 OK (2ms)
+
+
+Started GET "/assets/raffler.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /raffler.js - 200 OK (1ms)
+
+
+Started GET "/assets/entries/index.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /entries/index.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /models/entry.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /collections/entries.js - 200 OK (1ms)
+
+
+Started GET "/assets/routers/entries_router.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /routers/entries_router.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/views/entries/entries_index.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Served asset /views/entries/entries_index.js - 200 OK (1ms)
+
+
+Started GET "/api/entries" for 127.0.0.1 at 2014-01-20 18:38:04 -0800
+Processing by EntriesController#index as JSON
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" [0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "Matz"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[35m (53.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "Yehuda Katz"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "DHH"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "Jose Valim"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "Dr Nic"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "John Nunemaker"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entries" ("created_at", "name", "updated_at", "winner") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["name", "Aaron Patterson"], ["updated_at", Tue, 21 Jan 2014 02:38:15 UTC +00:00], ["winner", nil]]
+  [1m[35m (4.5ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /entries.css - 200 OK (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /jquery.js - 200 OK (25ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /underscore.js - 200 OK (3ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /backbone.js - 200 OK (2ms)
+
+
+Started GET "/assets/raffler.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /raffler.js - 200 OK (1ms)
+
+
+Started GET "/assets/entries/index.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /entries/index.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /models/entry.js - 200 OK (3ms)
+
+
+Started GET "/assets/views/entries/entries_index.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /views/entries/entries_index.js - 200 OK (2ms)
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /collections/entries.js - 200 OK (1ms)
+
+
+Started GET "/assets/routers/entries_router.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /routers/entries_router.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Served asset /application.js - 200 OK (13ms)
+
+
+Started GET "/api/entries" for 127.0.0.1 at 2014-01-20 18:38:21 -0800
+Processing by EntriesController#index as JSON
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" [0m
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /entries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /backbone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raffler.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /raffler.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entries/index.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /entries/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /underscore.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /models/entry.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /collections/entries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/entries/entries_index.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /views/entries/entries_index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/routers/entries_router.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /routers/entries_router.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/api/entries" for 127.0.0.1 at 2014-01-20 18:39:11 -0800
+Processing by EntriesController#index as JSON
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms)
